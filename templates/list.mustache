@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <title>Todo List</title>
+</head>
+
+<body>
+  <section class="header">
+      <form method="post" action="/new">
+        <input type="text" name="newTodo" placeholder="Add todo item...">
+        <input type="submit" value="Additem">
+      </form>
+  </section>
+  <section class="todo">
+    <form>
+      <ul>
+        {{#todo}}
+        <li> <input type="submit" value="Mark as Complete" class="incomplete"><label for="incomplete">{{item}}</label>
+        </li>
+        {{/todo}}
+      </ul>
+    </form>
+  </section>
+
+  <section class="complete">
+    <h2>Completed tasks</h2>
+    <ul>
+      {{#complete}}
+      <li>{{item}} </li>
+      {{/complete}}
+    </ul>
+
+  </section>
+</body>
+
+<html>
