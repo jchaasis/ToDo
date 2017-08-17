@@ -5,7 +5,7 @@ const bodyparser= require('body-parser');
 const server= express();
 
 const list = [{item: 'Create todo list'},
-              {item: 'Pick up Drogon from the vet'}, ];
+              {item: 'Pick up Drogon from the vet'} ];
 
 const completed = [{item: 'Win gold at the Olympics'}, ];
 
@@ -41,6 +41,18 @@ server.post("/new", function(req, res){
   });
 });
 
+server.post("/completed", function(req, res){
+
+  completed.push({item: req.body.incomplete});
+
+
+
+  //re-render
+  res.render('list', {todo: list,
+                      complete: completed,
+
+  });
+});
 
 server.listen(3003, function(){
   console.log("Todo list booted successfully");

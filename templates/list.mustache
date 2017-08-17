@@ -12,10 +12,10 @@
       </form>
   </section>
   <section class="todo">
-    <form>
+    <form method="post" action='/completed'>
       <ul>
         {{#todo}}
-        <li> <input type="submit" value="Mark as Complete" class="incomplete"><label for="incomplete">{{item}}</label>
+        <li> <input type="submit" value="Mark as Complete" class="incomplete" name="incomplete"><label for="incomplete">{{item}}</label>
         </li>
         {{/todo}}
       </ul>
